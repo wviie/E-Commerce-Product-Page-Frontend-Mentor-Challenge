@@ -7,16 +7,32 @@ function App() {
 
   const id = 0 //in a real world application would do useParams
 
-  const [products, setProducts] = useState([])
+  const [products, setProducts] = useState([
+    {
+      //backup data since deployment site isn't fetching the json file
+      id: 0,
+      name: 'Fall Limited Edition Sneakers',
+      description: 'These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they’ll withstand everything the weather can offer.',
+      'original-price': 250.00,
+      discount: 50,
+      'current-price': 125.00
+    }
+  ])
   const [productData, setProductData] = useState([])
   const [orders, setOrders] = useState([])
   const [currentImage, setCurrentImage] = useState(0);
 
   const getData = async () => {
+    try {
     const res = await fetch('../public/productData.json')
     const data = await res.json();
+    if (data.length === 0) throw 'Empty'
     setProducts(data);
-    setProductData(data[id]);
+    setProductData(products[id]); 
+    } catch(error) {
+      console.log('Error fetching data: ' + Error)
+    } 
+    finally {setProductData(products[id]);} 
   }
 
   const addCents = (price = 0) => {
