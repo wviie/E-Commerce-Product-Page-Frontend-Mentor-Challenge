@@ -5,7 +5,7 @@ const CartDropDown = ({products = [], orders, setOrders, addCents}) => {
   return (
 
     // animate-[dropDown_700ms_ease-in-out]
-    <section className="cart-drop-down z-10 absolute top-full-1 right-32 translate-x-1/2 max-md:top-20 max-md:left-1/2 max-md:-translate-x-1/2 max-w-96 w-96 max-sm:w-11/12 min-h-36 flex flex-col rounded-lg shadow-xl shadow-gray-300 bg-white">
+    <section className="cart-drop-down z-10 absolute top-full-1 right-32 translate-x-1/2 max-md:top-20 max-md:left-1/2 max-md:-translate-x-1/2 max-w-96 w-96 max-sm:w-11/12 min-h-36 flex flex-col rounded-lg shadow-xl shadow-gray-300 bg-white animate-[fade_500ms_ease-in]">
       <h2 className="font-bold text-slate-900 my-4 ml-4">Cart</h2>
       <hr />
       <div className="min-h-48 p-4 my-auto flex flex-col items-center justify-center gap-6">
