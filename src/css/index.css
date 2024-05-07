@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.fm-p {
+  font-family: "Kumbh Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings:
+  "YOPQ" 300;
+}
+
+@layer utilities {
+
+  .h-78 {
+    height: 19.5rem;
+  }
+
+  .mx-w {
+    width: 90vw;
+  }
+
+  .translate-x-p {
+    transform: translateX(2.5vw);
+  }
+
+}
+.section-min-height {
+  min-height: calc(100vh - 7rem);
+}
+
+.top-full-1{
+  top: calc(100% + 1rem);
+}
+
+.bottom-full-1{
+  bottom: calc(100% + 1rem);
+}
+
+.active-img {
+  outline-style: solid;
+}
+
+.active-img::after {
+  opacity: .7 !important; 
+}
+
+.primary-btn {
+  height: 3.5rem;
+  min-width: 10rem;
+  @apply transition-colors;
+}
+
+.overlay {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50% , -50%);
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 999;
+}
+/* } */
